@@ -29,11 +29,11 @@ public class AddBandServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String band = request.getParameter("band");
+		String band = request.getParameter("bandName");
 		String genre = request.getParameter("genre");
 		String favSong = request.getParameter("favSong");
 		
-		ListBand lb = new ListBand(band, favSong, genre);
+		ListBand lb = new ListBand(band, genre, favSong);
 		BandHelper bh = new BandHelper();
 		bh.insertBand(lb);
 		
